@@ -4,7 +4,7 @@ defmodule Exscm.Mixfile do
   def project do
     [app: :exscm,
      version: "0.0.1",
-     elixir: "~> 1.4",
+     elixir: "~> 1.3",
      description: description(),
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,

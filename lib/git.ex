@@ -26,7 +26,7 @@ defmodule Exscm.Git do
         current_tag
       [current_tag, distance, hash] -> 
         "#{guess_next_tag(current_tag)}.dev#{distance}+n#{hash}"
-      [current_tag, distance, hash, dirty] ->
+      [current_tag, distance, hash, "dirty"] ->
         "#{guess_next_tag(current_tag)}.dev#{distance}+n#{hash}.dirty"
     end
   end
