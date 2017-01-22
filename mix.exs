@@ -33,7 +33,8 @@ defmodule Exscm.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:excoveralls, "~> 0.5", only: :test},
-     {:ex_doc, ">= 0.0.0", only: :dev}]
+     {:ex_doc, ">= 0.0.0", only: :dev},
+     {:mock, "~> 0.2.0", only: :test}]
   end
 
   defp description do

@@ -14,19 +14,6 @@ defmodule Exscm do
     end
   end
 
-  def before_assembly(%{} = release) do
-    version = get_version()
-    info "Creating release with version #{version}"
-    %{release | version: version} # or nil
-  end
-
-  def after_assembly(_release), do: nil
-  def before_package(_release), do: nil
-  def after_package(_release), do: nil
-  def after_cleanup(_args), do: nil
-
-  defp info(message), do: apply(Mix.Releases.Logger, :info, ["exscm: " <> message])
-
   def dirty() do
     case System.cmd("git", ["status", "--porcelain", "--untracked-files=normal"]) do
       {"", 0} -> ""
