@@ -16,11 +16,11 @@ def deps do
 end
 ```
 
-Add the `exascm` plugin to your release config:
+Set the version with Exascm's `get_version` function:
 
 ```elixir
 release :test do
-  plugin Exascm
+  set version: Exascm.get_version()
 end
 ```
 
