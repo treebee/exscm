@@ -1,6 +1,6 @@
 defmodule Exscm do
   @moduledoc """
-  Plugin for generating versions for a release from git.
+  Module for generating versions for a release from git.
   """
 
   def get_version() do
@@ -14,7 +14,7 @@ defmodule Exscm do
     end
   end
 
-  def dirty() do
+  defp dirty() do
     case System.cmd("git", ["status", "--porcelain", "--untracked-files=normal"]) do
       {"", 0} -> ""
       {_untracked, 0} -> ".dirty"

@@ -8,15 +8,19 @@
 
 Inspired by [setuptools_scm](https://github.com/pypa/setuptools_scm).
 
-## Usage with distillery
+## Installation
+
+It can be installed from [hex.pm](https://hex.pm/packages/exscm).
 
 ```elixir
 def deps do
-  [{:exscm, "~> ?.?.?"}]
+  [{:exscm, "~> 0.0.1"}]
 end
 ```
 
-Set the version with Exascm's `get_version` function:
+## Usage with [distillery](https://hexdocs.pm/distillery/getting-started.html)
+
+Use Exascm's `get_version` function to generate the release version from scm:
 
 ```elixir
 release :test do
