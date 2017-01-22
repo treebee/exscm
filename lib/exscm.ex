@@ -4,6 +4,10 @@ defmodule Exscm do
   """
 
   def get_version() do
+    String.trim(git_version())
+  end
+
+  defp git_version() do
     version = case System.cmd("git", ["describe", "--tags", "--long", "--dirty"]) do
       {revision, 0} -> Exscm.Git.git_to_version(revision)
       {"", 128} -> "0.0.0"
